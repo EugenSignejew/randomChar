@@ -1,0 +1,23 @@
+body {
+    Margin:2% 2% 2% 2%;
+    background-image:url(img/old-paper-texture.jpg);
+    background-size: 100% auto;
+    color: #ffffff;
+    text-shadow:2px 2px #000000;
+    font-family: 'Lobster', serif;
+    font-size:20px;
+}
+
+.line{
+
+    border-bottom: thick solid black;
+}
+
+#diceRoller{
+    display:none;
+}
+
+footer{
+    position: absolute;
+    bottom:1%;
+}
