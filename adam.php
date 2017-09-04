@@ -75,7 +75,7 @@ $last = [
     "Anarchy",
     "Freeccs",
     "Zoldyck",
-    "Paladknight",
+    "Paladiknight",
     "Kiryoin",
     "the Hedghehog"
 ];
