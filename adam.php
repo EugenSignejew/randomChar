@@ -276,4 +276,3 @@ echo '
 </body>
 <footer>&copy;Eugen 2017-' . date("Y") . '</footer>
 </html>';
-
