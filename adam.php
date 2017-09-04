@@ -16,25 +16,12 @@ echo '<!DOCTYPE html>
 
 <body>';
 
-$firstM = [
-    "Bob",
-    "Joe",
-    "Kevin",
-    "Mike",
-    "Vega",
-    "Larry",
-    "Zane",
-    "Shiny",
-    "Wanda",
-    "Chosen",
-    "Cursed",
-    "Malcolm",
-    "Reese",
-    "Gon",
-    "Ging",
-    "Killua",
-    "Leorio",
-];
+$firstM = ("SELECT * FROM firstm 
+WHERE id >= (SELECT FLOOR( MAX(id) * RAND()) FROM `firstm` )
+ORDER BY id LIMIT 1;");
+
+foreach ($pdo->query($firstM) as $row) {
+}
 
 $firstF = [
     "maya",
@@ -136,18 +123,20 @@ $complications = [
     "you are very poor.",
     "you lost your memory.",
     "you are cursed.",
-    "you are undead",
+    "you are undead.",
     "you have social anxiety.",
     "you dont have any combat skills.",
     "you cant do anything right.",
-    "you are a dragon",
-    "you are a dragon maid"
+    "you are a dragon.",
+    "you are a dragon maid.",
+    "you are an idiot."
 ];
 
 //continue here I guess
 
+
+
 /*
-$firstM = ("SELECT * FROM firstm ORDER BY RAND() LIMIT 1");
 $firstF = ("SELECT * FROM firstf ORDER BY RAND() LIMIT 1");
 $last = ("SELECT * FROM lastname ORDER BY RAND() LIMIT 1");
 $settings = ("SELECT * FROM settings ORDER BY RAND() LIMIT 1");
@@ -177,7 +166,7 @@ if ($gender == "female") {
 
 echo 'You are a ' . $gender . " " . $starter . ' named ';
 if (empty($name)) {
-    echo $first[array_rand($first)] . ' ' . $last[array_rand($last)];
+    echo $first . ' ' . $last[array_rand($last)];
 } else {
     echo $name;
 }
@@ -252,7 +241,6 @@ switch ($starter) {
         echo "<br>" . $thief->image;
 
         break;
-
     case "Sorcerer":
 
         echo "Your stats are <br> Strength: " . $sorcerer->str . " Dexterity: " . $sorcerer->dex;
