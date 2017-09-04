@@ -144,22 +144,17 @@ $complications = [
     "you are a dragon maid"
 ];
 
-/*
-$firstM = $pdo->prepare("SELECT * FROM firstm ORDER BY RAND() LIMIT 1");
-$firstF = $pdo->prepare("SELECT * FROM firstf ORDER BY RAND() LIMIT 1");
-$last = $pdo->prepare("SELECT * FROM lastname ORDER BY RAND() LIMIT 1");
-$settings = $pdo->prepare("SELECT * FROM settings ORDER BY RAND() LIMIT 1");
-$antagonists = $pdo->prepare("SELECT * FROM antagonists ORDER BY RAND() LIMIT 1");
-$objectives = $pdo->prepare("SELECT * FROM objectives ORDER BY RAND() LIMIT 1");
-$complications = $pdo->prepare("SELECT * FROM complications ORDER BY RAND() LIMIT 1");
+//continue here I guess
 
-$firstM->execute();
-$firstF->execute();
-$last->execute();
-$settings->execute();
-$antagonists->execute();
-$objectives->execute();
-$complications->execute();
+/*
+$firstM = ("SELECT * FROM firstm ORDER BY RAND() LIMIT 1");
+$firstF = ("SELECT * FROM firstf ORDER BY RAND() LIMIT 1");
+$last = ("SELECT * FROM lastname ORDER BY RAND() LIMIT 1");
+$settings = ("SELECT * FROM settings ORDER BY RAND() LIMIT 1");
+$antagonists = ("SELECT * FROM antagonists ORDER BY RAND() LIMIT 1");
+$objectives = ("SELECT * FROM objectives ORDER BY RAND() LIMIT 1");
+$complications = ("SELECT * FROM complications ORDER BY RAND() LIMIT 1");
+
 */
 
 function roll2($sides) {
@@ -182,7 +177,7 @@ if ($gender == "female") {
 
 echo 'You are a ' . $gender . " " . $starter . ' named ';
 if (empty($name)) {
-    echo $first . ' ' . $last;
+    echo $first[array_rand($first)] . ' ' . $last[array_rand($last)];
 } else {
     echo $name;
 }
