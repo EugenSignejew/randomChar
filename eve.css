@@ -112,7 +112,7 @@ footer {
     width: 80px;
 }
 
-#loginButton span,#registerButton span {
+#loginButton span,#registerButton span, #logoutButton span {
     font-size: 20px;
     display: inline;
     text-align: center;
@@ -130,6 +130,14 @@ button{
 #registerButton {
     position: absolute;
     top:4%;
+    right: 3%;
+    height: 30px;
+    width: 90px;
+}
+
+#logoutButton{
+    position: absolute;
+    top:8%;
     right: 3%;
     height: 30px;
     width: 90px;

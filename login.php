@@ -1,21 +1,19 @@
 <?php
-session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=php-einfach', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
 
 if(isset($_GET['login'])) {
     $email = $_POST['email'];
-    $passwort = $_POST['passwort'];
+    $password = $_POST['password'];
 
     $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
     $result = $statement->execute(array('email' => $email));
     $user = $statement->fetch();
 
     //Überprüfung des Passworts
-    if ($user !== false && password_verify($passwort, $user['passwort'])) {
+    if ($user !== false && password_verify($password, $user['password'])) {
         $_SESSION['userid'] = $user['id'];
-        die('Login erfolgreich. Weiter zu <a href="geheim.php">internen Bereich</a>');
     } else {
-        $errorMessage = "E-Mail oder Passwort war ungültig<br>";
+        $errorMessage = "wrong email or password<br>";
     }
 
 }
@@ -23,7 +21,6 @@ if(isset($_GET['login'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
 </head>
 <body>
 
@@ -33,14 +30,18 @@ if(isset($errorMessage)) {
 }
 ?>
 
-<form action="?login=1" method="post">
-    E-Mail:<br>
-    <input type="email" size="40" maxlength="250" name="email"><br><br>
+<div id="login" class="overlay">
+    <a href="#" class="closebtn" id="hideLogin" >&times;</a>
 
-    Dein Passwort:<br>
-    <input type="password" size="40"  maxlength="250" name="passwort"><br>
+    <div class="overlay-content">
+        <form action="?login=1" method="post">
+            <input type="email" name="email" placeholder="email" maxlength="250"/><br>
+            <input type="password" name="password" placeholder="Password" maxlength="250"/><br>
+            <button id="loginButton2">Login</button>
+        </form>
+    </div>
+</div>
 
-    <input type="submit" value="Abschicken">
-</form>
+
 </body>
 </html>

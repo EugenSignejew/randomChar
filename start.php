@@ -15,25 +15,17 @@ echo'
     <script src="apple.js"></script>
 </head>
 <body>
+';
 
+require("login.php");
 
-<div id="login" class="overlay">
-            <a href="#" class="closebtn" id="hideLogin" >&times;</a>
-
-            <div class="overlay-content">
-                <form action="" method="post">
-                     <input type="text" name="user" placeholder="Username" /><br>
-                    <input type="password" name="password" placeholder="Password"/><br>
-                    <button id="loginButton2">Login</button>
-                </form>
-            </div>
-        </div>
-<button  id="loginButton" name="loginButton" ><span>Login</span></button>';
+echo'<button  id="loginButton" name="loginButton" ><span>Login</span></button>';
 
 require("register.php");
 
 echo '
 <button id="registerButton"><span>Register</span></button>
+<a href="logout.php"><button id="logoutButton"><span>Logout</span></button></a>
 
 <p>Create your character</p>
 <form method="post" action="adam.php">
