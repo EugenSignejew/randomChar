@@ -119,6 +119,10 @@ class job {
     public $int;
     public $image;
 
+    function shout() {
+        echo "I am " . $this->name . "!";
+    }
+
 }
 
 $warrior = new job;
@@ -153,13 +157,14 @@ $useless->vit = roll2(12);
 $useless->int = roll2(12);
 //$useless->image = "<img src='http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/deprived_small.jpg'>";
 
+$job = "$" . $starter;
+
 switch ($starter) {
     case "Warrior":
 
         echo "Your stats are <br> Strength: " . $warrior->str . " Dexterity: " . $warrior->dex;
         echo "<br> Vitality: " . $warrior->vit . " Intelligence: " . $warrior->int;
         echo "<br>" . $warrior->image;
-
         break;
     case "Thief":
 
