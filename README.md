@@ -1,1 +1,1 @@
-you make a random character you fig
+    You make a random character you fig

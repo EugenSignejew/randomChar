@@ -1,61 +1,145 @@
 body {
-    Margin:2% 2% 2% 2%;
-    background-image:url(img/old-paper-texture.jpg);
+    Margin: 2% 2% 2% 2%;
+    background-image: url(img/old-paper-texture.jpg);
     background-size: 100% auto;
     color: #ffffff;
-    text-shadow:2px 2px #000000;
+    text-shadow: 2px 2px #000000;
     font-family: 'Lobster', serif;
-    font-size:20px;
+    font-size: 20px;
 }
 
-p{
-    margin:0 ;
+p {
+    margin: 0;
 }
 
-.line{
+.line {
 
     border-bottom: thick solid black;
 }
 
-footer{
+footer {
     position: absolute;
-    bottom:1%;
+    bottom: 1%;
 }
 
-#diceRoller{
-    text-align:center;
-    display:none;
-    position:absolute;
-    right:8%;
-    border:black 2px solid;
+#diceRoller {
+    text-align: center;
+    display: none;
+    position: absolute;
+    right: 5%;
+    border: black 2px solid;
+    background: none;
+    transition: background 5s;
 }
 
-#showDice{
-    position:absolute;
-    top:3%;
-    right:8%;
-    border: none ;
-    background-image:url("https://images.template.net/wp-content/uploads/2015/04/Old-Paper-Texture-117552813.jpg");
-    color: #ffffff;
+#diceRoller:hover {
+    background: rgba(0, 0, 0, 0.50);
+}
+
+#showDice {
+    position: absolute;
+    border: rgba(0, 0, 0, 0.2) 5px solid;
+    top: 3%;
+    right: 8.5%;
     box-shadow: 0 0 0 0 rgb(0, 0, 0);
+    background-image: url("https://images.template.net/wp-content/uploads/2015/04/Old-Paper-Texture-117552813.jpg");
+    color: #ffffff;
+    text-shadow: 2px 2px black;
     transition: box-shadow 5s;
 }
 
-#showDice:hover{
-    box-shadow: 0 0 300px 32px rgba(0,0,0,0);
+#showDice:hover {
+    box-shadow: 0 0 300px 32px rgba(0, 0, 0, 0);
 }
 
 .roll {
-    border:1px black solid;
-    background:none;
+    margin: 2px;
+    border: 1px black solid;
+    background: none;
     transition: background 1s;
 }
 
-.roll:hover{
-    background:white;
+.roll:hover {
+    background: white;
 }
 
 .die {
     text-align: center;
 }
 
+.overlay {
+    height: 0;
+    width: 15%;
+    position: fixed;
+    z-index: 100;
+    left: 85%;
+    top: 0;
+    background-color: rgba(47, 13, 0, 0.8);
+    overflow-y: hidden;
+    transition: 0.5s;
+    border-radius: 0 0 0 100px;
+}
+
+.overlay-content {
+    position: relative;
+    top: 20%;
+    width: 100px;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+#loginButton {
+    position: absolute;
+    right: 9%;
+    height: 30px;
+    width: 80px;
+}
+
+#loginButton span,#registerButton span {
+    font-size: 20px;
+    display: inline;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    transition: 0.3s;
+}
+
+button{
+    text-align: center;
+    border-radius: 2px;
+    border: none;
+}
+
+#registerButton {
+    position: absolute;
+    top:4%;
+    right: 3%;
+    height: 30px;
+    width: 90px;
+}
+
+button:hover {
+    background-color: white;
+}
+
+.registerMessage{
+    color:crimson;
+
+}

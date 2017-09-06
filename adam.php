@@ -4,6 +4,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
 echo '<!DOCTYPE html>
 <html>
 <head>
+    <title>Main</title>
     <link rel="stylesheet" type="text/css" href="eve.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <script
@@ -177,5 +178,5 @@ echo "<br>" . $settings . " and you " . $objectives . " but " . $complications;
 
 echo '
 </body>
-<footer>&copy;Eugen 2017-' . date("Y") . '</footer>
+<footer>&copy;Eugen 2017-' . date("d/m/Y") . '</footer>
 </html>';
