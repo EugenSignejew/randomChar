@@ -16,135 +16,49 @@ echo '<!DOCTYPE html>
 
 <body>';
 
-$firstM = ("SELECT * FROM firstm 
-WHERE id >= (SELECT FLOOR( MAX(id) * RAND()) FROM `firstm` )
-ORDER BY id LIMIT 1;");
+$firstMDB = ("SELECT * FROM firstM ORDER BY RAND() LIMIT 1;");
 
-foreach ($pdo->query($firstM) as $row) {
+foreach ($pdo->query($firstMDB) as $row) {
+    $firstM = $row['firstM'];
 }
 
-$firstF = [
-    "maya",
-    "Kelly",
-    "Lisa",
-    "Shiny",
-    "Wanda",
-    "Ursula",
-    "Ann",
-    "Hermine",
-    "Excella",
-    "Mako",
-    "Ryouku",
-    "Chosen",
-    "Cursed",
-    "Akko",
-    "Panty",
-    "Stocking",
-    "Biscuit",
-    "Katsuki",
-    "Sonic"
-];
+$firstFDB = ("SELECT * FROM firstF ORDER BY RAND() LIMIT 1;");
 
-$last = [
-    "Smith",
-    "Johnsen",
-    "Warmson",
-    "Chariot",
-    "Numb",
-    "Kelly",
-    "Nano",
-    "Excelsia",
-    "Johansen",
-    "Lokoma",
-    "Mankanchoku",
-    "Undead",
-    "Ani",
-    "Anarchy",
-    "Freeccs",
-    "Zoldyck",
-    "Paladiknight",
-    "Kiryoin",
-    "the Hedghehog"
-];
+foreach ($pdo->query($firstFDB) as $row) {
+    $firstF = $row['firstF'];
+}
 
-$settings = [
-    "in a dense Forest full of life",
-    "in an isolated city",
-    "on Mars ",
-    "in a Hospital",
-    "under a Bridge",
-    "on the top of a skyscraper",
-    "inside the planets core",
-    "in a cave",
-    "on an enemy ship",
-    "in spaaaaaaaace",
-    "in an almost abandoned shrine",
-    "in your home",
-    "in a comfy village"
-];
+$lastnameDB = ("SELECT * FROM lastname ORDER BY RAND() LIMIT 1;");
 
-$antagonists = [
-    "Overlord Zenon, Lord of Lords",
-    "The Devil himself",
-    "Your brother turned against you",
-    "A giant Monstrosity of Sin",
-    "your inner greed",
-    "God",
-    "yourself",
-    "your addiction",
-    "The hero of the story",
-    "King eruem",
-    "Hisoka the Magician"
-];
+foreach ($pdo->query($lastnameDB) as $row) {
+    $lastname = $row['lastname'];
+}
 
-$objectives = [
-    "have to find the scrungy plingus ",
-    "have to defeat " . $antagonists[array_rand($antagonists)],
-    "have to find your long lost Sibling ",
-    "need to save your parents ",
-    "will help all people in need ",
-    "need to find yourself ",
-    "want to take over the world ",
-    "have to slay the dragon",
-    "have to 'slay' the dragon",
-    "have to save the world from yourself",
-    "want to become a master of a craft",
-    "have to find the first flame",
-    "need to become a nen master",
-    "find stronger and stronger foes",
-    "defeat the forces of evil"
-];
+$settingsDB = ("SELECT * FROM settings ORDER BY RAND() LIMIT 1;");
 
-$complications = [
-    "you only have one arm.",
-    "you dont know where you are.",
-    "you are blind.",
-    "you dont have any friends.",
-    "you are very poor.",
-    "you lost your memory.",
-    "you are cursed.",
-    "you are undead.",
-    "you have social anxiety.",
-    "you dont have any combat skills.",
-    "you cant do anything right.",
-    "you are a dragon.",
-    "you are a dragon maid.",
-    "you are an idiot."
-];
+foreach ($pdo->query($settingsDB) as $row) {
+    $settings = $row['settings'];
+}
+
+$antagonistsDB = ("SELECT * FROM antagonists ORDER BY RAND() LIMIT 1;");
+
+foreach ($pdo->query($antagonistsDB) as $row) {
+    $antagonists = $row['antagonists'];
+}
+
+$objectivesDB = ("SELECT * FROM objectives ORDER BY RAND() LIMIT 1;");
+
+foreach ($pdo->query($objectivesDB) as $row) {
+    $objectives = $row['objectives'];
+}
+
+$complicationsDB = ("SELECT * FROM complications ORDER BY RAND() LIMIT 1;");
+
+foreach ($pdo->query($complicationsDB) as $row) {
+    $complications = $row['complications'];
+}
 
 //continue here I guess
-
-
-
-/*
-$firstF = ("SELECT * FROM firstf ORDER BY RAND() LIMIT 1");
-$last = ("SELECT * FROM lastname ORDER BY RAND() LIMIT 1");
-$settings = ("SELECT * FROM settings ORDER BY RAND() LIMIT 1");
-$antagonists = ("SELECT * FROM antagonists ORDER BY RAND() LIMIT 1");
-$objectives = ("SELECT * FROM objectives ORDER BY RAND() LIMIT 1");
-$complications = ("SELECT * FROM complications ORDER BY RAND() LIMIT 1");
-
-*/
 
 function roll2($sides) {
     return mt_rand(3, $sides);
@@ -166,7 +80,7 @@ if ($gender == "female") {
 
 echo 'You are a ' . $gender . " " . $starter . ' named ';
 if (empty($name)) {
-    echo $first . ' ' . $last[array_rand($last)];
+    echo $first . ' ' . $lastname;
 } else {
     echo $name;
 }
@@ -181,9 +95,9 @@ function roll($sides) {
 echo "<span style='font-weight:bold'>4 sided Die: </span>" . roll(4) . "<br>" .
     "<span style='font-weight:bold'>6 sided Die: </span>" . roll(6) . "<br>" .
     "<span style='font-weight:bold'>20 sided Die: </span>" . roll(20) . "<br>" .
-    "<span style='font-weight:bold'>100 sided Die: </span>" . roll(100) . "<br><br>";
-echo '</div>
-<button type=button id="showDice">show Dice</button><br>';
+    "<span style='font-weight:bold'>100 sided Die: </span>" . roll(100) . "<br><br>
+</div>
+<button type=button id='showDice'>show Dice</button><br>";
 
 class job {
     public $name;
@@ -192,6 +106,7 @@ class job {
     public $vit;
     public $int;
     public $image;
+    
 }
 
 $warrior = new job;
@@ -258,7 +173,11 @@ switch ($starter) {
 
 }
 
-echo "<br> You are " . $settings[array_rand($settings)] . " and you " . $objectives[array_rand($objectives)] . " but " . $complications[array_rand($complications)];
+if (($objectives == "have to defeat") OR ($objectives == "have to save the world from")) {
+    $objectives = $objectives . " " . $antagonists;
+}
+
+echo "<br>" . $settings . " and you " . $objectives . " but " . $complications;
 
 echo '
 </body>
