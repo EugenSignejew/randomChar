@@ -86,16 +86,13 @@ if (empty($name)) {
 }
 echo ',<br>
 <div id="diceRoller">';
-echo "<p>Dice roller</p>";
-
-function roll($sides) {
-    return mt_rand(1, $sides);
-}
-
-echo "<span style='font-weight:bold'>4 sided Die: </span>" . roll(4) . "<br>" .
-    "<span style='font-weight:bold'>6 sided Die: </span>" . roll(6) . "<br>" .
-    "<span style='font-weight:bold'>20 sided Die: </span>" . roll(20) . "<br>" .
-    "<span style='font-weight:bold'>100 sided Die: </span>" . roll(100) . "<br><br>
+echo "<p>Dice roller</p>
+<button class=\"roll\" id='d4'>D4</button>
+<button class=\"roll\" id='d6'>D6</button>
+<button class=\"roll\" id='d10'>D10</button>
+<button class=\"roll\" id='d20'>D20</button>
+<button class=\"roll\" id='d100'>D100</button>
+<div class=\"die\">0</div>
 </div>
 <button type=button id='showDice'>show Dice</button><br>";
 
@@ -106,7 +103,7 @@ class job {
     public $vit;
     public $int;
     public $image;
-    
+
 }
 
 $warrior = new job;
@@ -170,7 +167,6 @@ switch ($starter) {
         echo "<br>" . $useless->image;
 
         break;
-
 }
 
 if (($objectives == "have to defeat") OR ($objectives == "have to save the world from")) {

@@ -8,16 +8,54 @@ body {
     font-size:20px;
 }
 
+p{
+    margin:0 ;
+}
+
 .line{
 
     border-bottom: thick solid black;
-}
-
-#diceRoller{
-    display:none;
 }
 
 footer{
     position: absolute;
     bottom:1%;
 }
+
+#diceRoller{
+    text-align:center;
+    display:none;
+    position:absolute;
+    right:8%;
+    border:black 2px solid;
+}
+
+#showDice{
+    position:absolute;
+    top:3%;
+    right:8%;
+    border: none ;
+    background-image:url("https://images.template.net/wp-content/uploads/2015/04/Old-Paper-Texture-117552813.jpg");
+    color: #ffffff;
+    box-shadow: 0 0 0 0 rgb(0, 0, 0);
+    transition: box-shadow 5s;
+}
+
+#showDice:hover{
+    box-shadow: 0 0 300px 32px rgba(0,0,0,0);
+}
+
+.roll {
+    border:1px black solid;
+    background:none;
+    transition: background 1s;
+}
+
+.roll:hover{
+    background:white;
+}
+
+.die {
+    text-align: center;
+}
+
