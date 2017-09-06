@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 $pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
 
 echo '<!DOCTYPE html>
@@ -82,11 +81,11 @@ if ($gender == "female") {
     $first = $firstF;
 }
 
-echo 'You are a ' . $gender . " " . $starter . ' named ';
+echo 'You are a ' . $gender . " <span id='spanJob'>" . $starter . '</span> named ';
 if (empty($name)) {
     echo $first . ' ' . $lastname;
 } else {
-    echo $name;
+    echo '<span id="spanName">' . $name . "</span>";
 }
 echo ',<br>
 <div id="diceRoller">';
@@ -98,7 +97,19 @@ echo "<p>Dice roller</p>
 <button class=\"roll\" id='d100'>D100</button>
 <div class=\"die\">0</div>
 </div>
-<button type=button id='showDice'>show Dice</button><br>";
+<button type=button id='showDice'>show Dice</button><br>
+<a href='start.php'><button id='goBack'>go back</button></a>
+
+<div id='half'></div>
+<div id='secret' class='overlay'>
+
+    <a href='' class='closebtn' id='hideSecret'>&times;</a>
+    <div class='overlay-content'>
+        
+    </div>
+</div>
+
+<button id='secretButton'>Secret</button>";
 
 class job {
     public $name;

@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    $(function () {
-        $('#showDice').on('click', function () {
-            $('#diceRoller').toggle();
+    $("#showDice").click(function(){
+        $("#diceRoller").animate({
+            height: 'toggle'
         });
     });
 
@@ -41,6 +41,29 @@ $(document).ready(function () {
         $("#register").css("height", "0%");
         return (false)
     });
+
+
+    function bigText($param) {
+        $param.animate({fontSize: '1.5em'}, "slow");
+    }
+
+    $("#secretButton").click(function () {
+        $("#secret").css("height", "100%");
+        $("#half").delay(300).animate({width:1745},1000);
+
+    });
+    //hide the overlay
+    $("#hideSecret").click(function () {
+        $("#secret").css("height", "0%");
+        $("#half").animate({width:0},500);
+
+        return (false)
+    });
+
+
+$("#sword").delay(700).animate({top: "30%"});
+$("#sword2").delay(700).animate({top: "30%"});
+
 
 
 });

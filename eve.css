@@ -1,6 +1,6 @@
 body {
     Margin: 2% 2% 2% 2%;
-    background-image: url(img/old-paper-texture.jpg);
+    background-image: url(img/old-paper-texture.png);
     background-size: 100% auto;
     color: #ffffff;
     text-shadow: 2px 2px #000000;
@@ -26,7 +26,7 @@ footer {
     text-align: center;
     display: none;
     position: absolute;
-    right: 5%;
+    right: 3%;
     border: black 2px solid;
     background: none;
     transition: background 5s;
@@ -36,20 +36,34 @@ footer {
     background: rgba(0, 0, 0, 0.50);
 }
 
-#showDice {
+#showDice, #goBack, #secretButton {
     position: absolute;
     border: rgba(0, 0, 0, 0.2) 5px solid;
-    top: 3%;
-    right: 8.5%;
-    box-shadow: 0 0 0 0 rgb(0, 0, 0);
+
+    box-shadow: 2px 2px 5px 5px rgb(0, 0, 0);
     background-image: url("https://images.template.net/wp-content/uploads/2015/04/Old-Paper-Texture-117552813.jpg");
     color: #ffffff;
     text-shadow: 2px 2px black;
-    transition: box-shadow 5s;
+    transition: box-shadow 1s;
 }
 
-#showDice:hover {
+#showDice {
+    top: 3%;
+    right: 7.5%;
+}
+
+#showDice:hover, #goBack:hover, #secretButton:hover {
     box-shadow: 0 0 300px 32px rgba(0, 0, 0, 0);
+}
+
+#goBack {
+    right: 3%;
+    top: 3%;
+}
+
+#secretButton {
+    right: 12.8%;
+    top: 3%;
 }
 
 .roll {
@@ -74,10 +88,26 @@ footer {
     z-index: 100;
     left: 85%;
     top: 0;
-    background-color: rgba(47, 13, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     overflow-y: hidden;
     transition: 0.5s;
     border-radius: 0 0 0 100px;
+}
+
+#secret, #half {
+    width: 100%;
+    left: 0;
+    border-radius: 0;
+    background-color: black;
+}
+
+#half {
+    position: absolute;
+    z-index:101;
+    top: 75%;
+    width:0;
+    height: 25%;
+    background-color: white;
 }
 
 .overlay-content {
@@ -105,14 +135,7 @@ footer {
     font-size: 60px;
 }
 
-#loginButton {
-    position: absolute;
-    right: 9%;
-    height: 30px;
-    width: 80px;
-}
-
-#loginButton span,#registerButton span, #logoutButton span {
+#loginButton span, #registerButton span, #logoutButton span {
     font-size: 20px;
     display: inline;
     text-align: center;
@@ -121,33 +144,56 @@ footer {
     transition: 0.3s;
 }
 
-button{
+button {
     text-align: center;
     border-radius: 2px;
     border: none;
 }
 
-#registerButton {
+#loginButton {
     position: absolute;
-    top:4%;
+    right: 9%;
+    height: 30px;
+    width: 80px;
+}
+
+#registerButton, #logoutButton {
+    position: absolute;
+    top: 4%;
     right: 3%;
     height: 30px;
     width: 90px;
 }
 
-#logoutButton{
-    position: absolute;
-    top:8%;
+#logoutButton {
+    top: 8%;
     right: 3%;
-    height: 30px;
-    width: 90px;
 }
 
 button:hover {
     background-color: white;
 }
 
-.registerMessage{
-    color:crimson;
+.registerMessage {
+    color: crimson;
 
+}
+
+#sword {
+    width: 10%;
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+    left: 40%;
+    top: -500px;
+}
+
+#sword2 {
+    transform: scaleX(-1);
+    margin-right: auto;
+    margin-left: auto;
+    width: 10%;
+    position: absolute;
+    top: -500px;
+    left: 45%;
 }

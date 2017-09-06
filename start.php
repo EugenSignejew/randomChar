@@ -1,6 +1,6 @@
 <?php
 
-echo'
+echo '
 <!doctype html>
 <html>
 <head>
@@ -19,7 +19,7 @@ echo'
 
 require("login.php");
 
-echo'<button  id="loginButton" name="loginButton" ><span>Login</span></button>';
+echo '<button  id="loginButton" name="loginButton" ><span>Login</span></button>';
 
 require("register.php");
 
@@ -45,6 +45,11 @@ echo '
     <button>Submit</button>
     <button type="reset" id="reset">Reset</button>
 </form>
+
+<img id="sword" src="img/black-sword.svg.hi.png">
+<img id="sword2" src="img/black-sword.svg.hi.png">
+
+
 </body>
 <footer>&copy;Eugen 2017-' . date("d/m/Y") . '</footer>
 </html>

@@ -10,45 +10,45 @@ $pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
 <?php
 $showFormular = true; //Variable ob das Registrierungsformular anezeigt werden soll
 
-if(isset($_GET['register'])) {
+if (isset($_GET['register'])) {
     $error = false;
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
 
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo '<p class="registerMessage">please enter a working email</p><br>';
         $error = true;
     }
-    if(strlen($password) == 0) {
+    if (strlen($password) == 0) {
         echo '<p class="registerMessage">please enter a password</p><br>';
         $error = true;
     }
-    if($password != $password2) {
+    if ($password != $password2) {
         echo '<p class="registerMessage">Passwords must be the same</p><br>';
         $error = true;
     }
 
     //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
-    if(!$error) {
+    if (!$error) {
         $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-        $result = $statement->execute(array('email' => $email));
+        $result = $statement->execute(['email' => $email]);
         $user = $statement->fetch();
 
-        if($user !== false) {
+        if ($user !== false) {
             echo '<p class="registerMessage">this email is already used</p><br>';
             $error = true;
         }
     }
 
     //Keine Fehler, wir können den Nutzer registrieren
-    if(!$error) {
+    if (!$error) {
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
         $statement = $pdo->prepare("INSERT INTO users (email, password) VALUES (:email, :password)");
-        $result = $statement->execute(array('email' => $email, 'password' => $password_hash));
+        $result = $statement->execute(['email' => $email, 'password' => $password_hash]);
 
-        if($result) {
+        if ($result) {
             echo '<p class="registerMessage">Success</p>';
             $showFormular = false;
         } else {
@@ -57,10 +57,10 @@ if(isset($_GET['register'])) {
     }
 }
 
-if($showFormular) {
+if ($showFormular) {
     ?>
     <div id="register" class="overlay">
-        <a href="#" class="closebtn" id="hideRegister" >&times;</a>
+        <a href="#" class="closebtn" id="hideRegister">&times;</a>
 
         <div class="overlay-content">
             <form action="?register=1" method="post">

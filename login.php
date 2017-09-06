@@ -1,12 +1,12 @@
 <?php
 $pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
 
-if(isset($_GET['login'])) {
+if (isset($_GET['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-    $result = $statement->execute(array('email' => $email));
+    $result = $statement->execute(['email' => $email]);
     $user = $statement->fetch();
 
     //Überprüfung des Passworts
@@ -25,13 +25,13 @@ if(isset($_GET['login'])) {
 <body>
 
 <?php
-if(isset($errorMessage)) {
+if (isset($errorMessage)) {
     echo $errorMessage;
 }
 ?>
 
 <div id="login" class="overlay">
-    <a href="#" class="closebtn" id="hideLogin" >&times;</a>
+    <a href="#" class="closebtn" id="hideLogin">&times;</a>
 
     <div class="overlay-content">
         <form action="?login=1" method="post">
