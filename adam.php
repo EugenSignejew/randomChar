@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("namespace.php");
 
 $pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
 $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -7,7 +8,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $statement = $pdo->prepare("DELETE FROM users WHERE id = ?");
 $deleteThis = $pdo->lastInsertId();
-$statement->execute([6]);
+$statement->execute([0]);
 
 echo '<!DOCTYPE html>
 <html>

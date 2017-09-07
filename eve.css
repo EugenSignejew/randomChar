@@ -12,9 +12,22 @@ p {
     margin: 0;
 }
 
-.line {
+img, button {
+    filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.8));
+    box-shadow: 0 0 0 0 crimson inset;
+    transition: box-shadow 5s;
 
-    border-bottom: thick solid black;
+}
+
+img:hover, button:hover {
+    box-shadow: 0 0 100px 46px crimson inset;
+}
+
+button {
+    filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.8));
+    text-align: center;
+    border-radius: 2px;
+    border: none;
 }
 
 footer {
@@ -30,6 +43,7 @@ footer {
     border: black 2px solid;
     background: none;
     transition: background 5s;
+
 }
 
 #diceRoller:hover {
@@ -103,9 +117,9 @@ footer {
 
 #half {
     position: absolute;
-    z-index:101;
+    z-index: 101;
     top: 75%;
-    width:0;
+    width: 0;
     height: 25%;
     background-color: white;
 }
@@ -144,12 +158,6 @@ footer {
     transition: 0.3s;
 }
 
-button {
-    text-align: center;
-    border-radius: 2px;
-    border: none;
-}
-
 #loginButton {
     position: absolute;
     right: 9%;
@@ -179,7 +187,7 @@ button:hover {
 
 }
 
-#sword {
+#sword, #sword2 {
     width: 10%;
     position: absolute;
     margin-right: auto;
@@ -188,12 +196,8 @@ button:hover {
     top: -500px;
 }
 
+
 #sword2 {
     transform: scaleX(-1);
-    margin-right: auto;
-    margin-left: auto;
-    width: 10%;
-    position: absolute;
-    top: -500px;
     left: 45%;
 }
