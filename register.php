@@ -43,7 +43,7 @@ if (isset($_GET['register'])) {
         }
     }
 
-    //Keine Fehler, wir können den Nutzer registrieren
+    //Keine Fehler, wir können den Nutzer registrieren oh yes
     if (!$error) {
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
@@ -61,9 +61,9 @@ if (isset($_GET['register'])) {
 
 if ($showFormular) {
     ?>
+
     <div id="register" class="overlay">
         <a href="#" class="closebtn" id="hideRegister">&times;</a>
-
         <div class="overlay-content">
             <form action="?register=1" method="post">
                 <input type="text" name="email" placeholder="email" maxlength="250" required><br>
