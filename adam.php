@@ -6,9 +6,8 @@ $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $statement = $pdo->prepare("DELETE FROM users WHERE id = ?");
-$statement->execute(array(6));
-
-
+$deleteThis = $pdo->lastInsertId();
+$statement->execute([6]);
 
 echo '<!DOCTYPE html>
 <html>
