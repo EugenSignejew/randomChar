@@ -49,10 +49,10 @@ $(document).ready(function () {
     $("#secretButton").click(function () {
         $("#secret").css("height", "100%");
         $("#half").delay(300).animate({width: 1745}, 1000);
-        $("#skel").delay(2000).animate({left:1900},3500);
+        $("#skel").delay(2000).animate({left: 1900}, 3500);
         $("#spook").delay(5000).animate({
-            height:"toggle"
-        },5000);
+            height: "toggle"
+        }, 5000);
     });
     //hide the overlay
     $("#hideSecret").click(function () {

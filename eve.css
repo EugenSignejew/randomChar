@@ -16,7 +16,6 @@ img, button {
     filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.8));
     box-shadow: 0 0 0 0 crimson inset;
     transition: box-shadow 5s;
-
 }
 
 img:hover, button:hover {
@@ -43,7 +42,6 @@ footer {
     border: black 2px solid;
     background: none;
     transition: background 5s;
-
 }
 
 #diceRoller:hover {
@@ -53,7 +51,6 @@ footer {
 #showDice, #goBack, #secretButton {
     position: absolute;
     border: rgba(0, 0, 0, 0.2) 5px solid;
-
     box-shadow: 2px 2px 5px 5px rgb(0, 0, 0);
     background-image: url("https://images.template.net/wp-content/uploads/2015/04/Old-Paper-Texture-117552813.jpg");
     color: #ffffff;
@@ -95,7 +92,7 @@ footer {
     text-align: center;
 }
 
-.overlay,#secret,#half {
+.overlay, #secret, #half {
     height: 0;
     width: 100%;
     position: fixed;
@@ -104,9 +101,8 @@ footer {
     top: 0;
     background-color: rgb(0, 0, 0);
     overflow-y: hidden;
-    text-align:center;
+    text-align: center;
     transition: 0.5s;
-
 }
 
 #half {
@@ -118,11 +114,9 @@ footer {
     background-color: white;
 }
 
-
-
 .overlay-content {
     position: relative;
-    left:45%;
+    left: 45%;
     top: 30%;
     width: 100px;
     text-align: center;
@@ -193,23 +187,27 @@ button:hover {
     top: -500px;
 }
 
-
 #sword2 {
     transform: scaleX(-1);
     left: 45%;
 }
 
-#skel{
-    position:absolute;
-    left:-50px;
-    top:70%;
-    max-height:50px;
+#skel {
+    position: absolute;
+    left: -50px;
+    top: 70%;
+    max-height: 50px;
 }
 
-#spook{
-    z-index:1000;
-    position:absolute;
-    display:none;
-    left:50%;
+#spook {
+    z-index: 1000;
+    position: absolute;
+    display: none;
+    left: 50%;
     top: 50%;
+}
+
+.jobPic{
+    top:55%;
+    max-height:100px;
 }

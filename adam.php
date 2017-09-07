@@ -144,7 +144,7 @@ $warrior->str = rollSpecial(15);
 $warrior->dex = roll2(9);
 $warrior->vit = roll2(12);
 $warrior->int = roll2(6);
-//$warrior->image = "<img src='http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/knight_small.jpg'>";
+$warrior->image = "<img class='jobPic' src='http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/knight_small.jpg'>";
 
 $thief = new job;
 $thief->name = "Thief";
@@ -152,7 +152,7 @@ $thief->str = roll2(7);
 $thief->dex = rollSpecial(15);
 $thief->vit = roll2(10);
 $thief->int = roll2(10);
-//$thief->image = "<img src='http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/thief_small.jpg'>";
+$thief->image = "<img class='jobPic' src='http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/thief_small.jpg'>";
 
 $sorcerer = new job;
 $sorcerer->name = "Sorcerer";
@@ -160,7 +160,7 @@ $sorcerer->str = roll2(6);
 $sorcerer->dex = roll2(12);
 $sorcerer->vit = roll2(9);
 $sorcerer->int = rollSpecial(15);
-//$sorcerer->image = "<img src='http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/sorcerer_small.jpg'>";
+$sorcerer->image = "<img class='jobPic' src='http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/sorcerer_small.jpg'>";
 
 $useless = new job;
 $useless->name = "Useless";
@@ -168,7 +168,7 @@ $useless->str = roll2(12);
 $useless->dex = roll2(12);
 $useless->vit = roll2(12);
 $useless->int = roll2(12);
-//$useless->image = "<img src='http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/deprived_small.jpg'>";
+$useless->image = "<img class='jobPic' src='http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/deprived_small.jpg'>";
 
 $job = "$" . $starter;
 
