@@ -2,6 +2,13 @@
 session_start();
 
 $pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
+$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$statement = $pdo->prepare("DELETE FROM users WHERE id = ?");
+$statement->execute(array(6));
+
+
 
 echo '<!DOCTYPE html>
 <html>
@@ -120,7 +127,7 @@ class job {
     public $image;
 
     function shout() {
-        echo "I am " . $this->name . "!";
+        echo "I am a" . $this->name . "!";
     }
 
 }
@@ -197,5 +204,6 @@ echo "<br>" . $settings . " and you " . $objectives . " but " . $complications;
 
 echo '
 </body>
+
 <footer>&copy;Eugen 2017-' . date("d/m/Y") . '</footer>
 </html>';
