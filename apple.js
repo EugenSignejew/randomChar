@@ -25,25 +25,25 @@ $(document).ready(function () {
     //show login overlay
     $("#loginButton").click(function () {
         $("#login").css("height", "55%");
-        $("#loginGray").css("height","55%");
+
     });
     //hide the overlay
     $("#hideLogin").click(function () {
         $("#login").css("height", "0%");
-        $("#loginGray").css("height","0%");
+
         return (false)
     });
 
     //show register overlay
     $("#registerButton").click(function () {
         $("#register").css("height", "55%");
-        $("#registerGray").css("height","55%");
+
 
     });
     //hide the overlay
     $("#hideRegister").click(function () {
         $("#register").css("height", "0%");
-        $("#registerGray").css("height","0%");
+
 
         return (false)
     });
