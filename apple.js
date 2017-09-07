@@ -58,6 +58,10 @@ $(document).ready(function () {
     $("#hideSecret").click(function () {
         $("#secret").css("height", "0%");
         $("#half").animate({width: 0}, 200);
+        $("#skel").delay(2000).animate({left: -50}, 3500);
+        $("#spook").animate({
+            height: "toggle"
+        }, 5000);
         return (false)
     });
 
