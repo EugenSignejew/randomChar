@@ -198,3 +198,18 @@ button:hover {
     transform: scaleX(-1);
     left: 45%;
 }
+
+#skel{
+    position:absolute;
+    left:-50px;
+    top:70%;
+    max-height:50px;
+}
+
+#spook{
+    z-index:1000;
+    position:absolute;
+    display:none;
+    left:50%;
+    top: 50%;
+}

@@ -116,8 +116,9 @@ echo "<p>Dice roller</p>
 <div id='secret' class='overlay'>
 
     <a href='' class='closebtn' id='hideSecret'>&times;</a>
+    <img id='skel' src='http://www.animatedimages.org/data/media/628/animated-skeleton-image-0014.gif'>
+    <img id='spook' src='http://bestanimations.com/Humans/Skeletons/skeleton-animated-gif-20.gif'>
     <div class='overlay-content'>
-        
     </div>
 </div>
 
