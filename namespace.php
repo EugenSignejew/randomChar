@@ -10,10 +10,10 @@ foreach ($pdo->query($sql) as $row) {
 }
 
 $statement = $pdo->prepare("DELETE FROM users WHERE id = ?");
-$statement->execute(array(5));
-
+$statement->execute([10]);
 
 echo "<br><br>";
+
 class MyClass {
     public $prop1 = "I'm a class property!";
 
@@ -62,10 +62,9 @@ verbinde mich mit der datenbank ";
 echo "<form method='post' action=''><button>count up to</button><input type='text' name='number'>
 </form><br>";
 
-
 if (empty($_POST["number"])) {
     $number = 1;
-}else{
+} else {
     $number = $_POST["number"];
 }
 
@@ -73,3 +72,4 @@ do {
     // Call plusOne without instantiating MyClass
     echo MyClass::plusOne();
 } while (MyClass::$count < $number);
+//guad ausschaut man
