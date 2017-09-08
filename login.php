@@ -38,7 +38,8 @@ if (isset($errorMessage)) {
     <div class="overlay-content">
         <form action="?login=1" method="post">
             <input type="email" name="email" placeholder="email" maxlength="250"/><br>
-            <input type="password" name="password" placeholder="Password" maxlength="250"/><br>
+            <input type="password" name="password" placeholder="Password" maxlength="250"/>
+            <input type="hidden" name="csrf" value="'.$_SESSION['csrf_token'].'"><br>
             <button id="loginButton2">Login</button>
         </form>
     </div>

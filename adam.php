@@ -82,6 +82,10 @@ function rollSpecial($sides) {
     return mt_rand(7, $sides);
 }
 
+function e($string) {
+    return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+}
+
 $starter = $_POST['starter'];
 $gender = $_POST['gender'];
 $name = $_POST['name'];
@@ -96,7 +100,7 @@ echo 'You are a ' . $gender . " <span id='spanJob'>" . $starter . '</span> named
 if (empty($name)) {
     echo $first . ' ' . $lastname;
 } else {
-    echo '<span id="spanName">' . $name . "</span>";
+    echo '<span id="spanName">' . e($name) . "</span>";
 }
 echo ',<br>
 <div id="diceRoller">';
