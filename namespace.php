@@ -46,14 +46,15 @@ class MyOtherClass extends MyClass
     public function __construct()
     {
         parent::__construct();
-        echo "A new constructor in " . __CLASS__ . ".<br />";
+        echo "A new constructor in " . __CLASS__ . ".<br />
+verbinde mich mit der datenbank ";
     }
 
     public function newMethod()
     {
         echo "From a new method in " . __CLASS__ . ".<br />";
     }
-    
+
 }
 
 do

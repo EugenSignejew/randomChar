@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once("namespace.php");
 
 if (!$_SESSION['userid']) {
     header("Location: start.php");
