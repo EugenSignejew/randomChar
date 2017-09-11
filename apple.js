@@ -72,5 +72,5 @@ $(document).ready(function () {
 
 
 
-    //change the apple again and again
+    //change the apple again and again and agian
 });
