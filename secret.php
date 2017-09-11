@@ -7,5 +7,5 @@ if (!isset($_SESSION['userid'])) {
 //Abfrage der Nutzer ID vom Login
 $userid = $_SESSION['userid'];
 
-echo "whats up nigga: " . $userid;
+echo "whats up nigg: " . $userid;
 ?>
