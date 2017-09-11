@@ -16,4 +16,6 @@ editor!
 =======
 editor!
 ior
->>>>>>> apple
+ HEAD
+
+risk doing it again
