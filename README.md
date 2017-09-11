@@ -8,7 +8,12 @@ edit
 
 woah  editee
 
+<<<<<<< HEAD
 
 check em
 
 editor!
+=======
+editor!
+ior
+>>>>>>> apple
