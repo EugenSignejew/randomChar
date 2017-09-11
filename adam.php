@@ -72,8 +72,6 @@ foreach ($pdo->query($complicationsDB) as $row) {
     $complications = $row['complications'];
 }
 
-//continue here I guess
-
 function roll2($sides) {
     return mt_rand(3, $sides);
 }
