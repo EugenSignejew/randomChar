@@ -8,14 +8,3 @@ edit
 
 woah  editee
 
-<<<<<<< HEAD
-
-check em
-
-editor!
-=======
-editor!
-ior
- HEAD
-
-risk doing it again
