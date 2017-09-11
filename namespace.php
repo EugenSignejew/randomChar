@@ -11,7 +11,7 @@ foreach ($pdo->query($sql) as $row) {
 //appple
 $statement = $pdo->prepare("DELETE FROM users WHERE id = ?");
 $statement->execute([10]);
-
+//apples
 echo "<br><br>";
 
 class MyClass {
