@@ -74,7 +74,7 @@ if ($showFormular) {
         </div>
     </div>
     <?php
-} //Ende von if($showFormular) ende von apples and apples
+} //Ende von if($showFormular) ende von apples and apples and apples
 ?>
 
 </body>
