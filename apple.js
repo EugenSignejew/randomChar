@@ -69,4 +69,8 @@ $(document).ready(function () {
     $("#sword").delay(1000).animate({top: "30%"});
     $("#sword2").delay(1000).animate({top: "30%"});
 
+
+
+
+    //change
 });
