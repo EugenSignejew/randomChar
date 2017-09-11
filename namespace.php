@@ -8,7 +8,7 @@ $sql = "SELECT * FROM users ORDER BY email";
 foreach ($pdo->query($sql) as $row) {
     echo $row["email"] . "<br>";
 }
-
+//appple
 $statement = $pdo->prepare("DELETE FROM users WHERE id = ?");
 $statement->execute([10]);
 
