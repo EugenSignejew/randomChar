@@ -23,6 +23,7 @@ if (isset($_GET['login'])) {
 <!DOCTYPE html>
 <html>
 <head>
+
 </head>
 <body>
 
@@ -48,3 +49,12 @@ if (isset($errorMessage)) {
 
 </body>
 </html>
+
+
+/*
+
++----+----+----+
+|just|like|that|
++----+----+----+
+
+*/
