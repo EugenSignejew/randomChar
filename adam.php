@@ -214,4 +214,3 @@ echo '
 
 <footer>&copy;Eugen 2017-' . date("d/m/Y") . '</footer>
 </html>';
-//great days and even more days

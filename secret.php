@@ -8,4 +8,3 @@ if (!isset($_SESSION['userid'])) {
 $userid = $_SESSION['userid'];
 
 echo "whats up nigg: " . $userid;
-?>

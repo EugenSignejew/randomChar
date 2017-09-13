@@ -65,12 +65,6 @@ $(document).ready(function () {
         return (false)
     });
 
-
     $("#sword").delay(1000).animate({top: "30%"});
     $("#sword2").delay(1000).animate({top: "30%"});
-
-
-
-
-    //change the apple again and again and agian broken oh no broken 
 });
