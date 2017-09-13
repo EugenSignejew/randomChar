@@ -11,7 +11,7 @@ echo "woop.php<br><br>";
 
 $pdo = new PDO("mysql:host=localhost;dbname=test", "root", "");
 
-$sql="SELECT * FROM `woop.php`";
+$sql="SELECT * FROM `woop.php` ORDER BY rand();";
 foreach($pdo->query($sql) as $row){
-    echo $row["id"]." ".$row["woop1.php"].", ".$row["woop2.php"].", ".$row["woop3.php"]."<br><br>";
+    echo "gotta get money<br>".$row["id"]." ".$row["woop1.php"].", ".$row["woop2.php"].", ".$row["woop3.php"]."<br><br> ";
 }
